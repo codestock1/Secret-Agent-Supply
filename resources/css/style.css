@@ -71,7 +71,10 @@ h4 {
   line-height: 1.2;
 }
 
-
+@media only screen and (max-width: 470px) {
+  .main-banner {
+    height: 15rem;
+  }
 
   .headline {
     width: 100%;
@@ -106,7 +109,10 @@ nav ul {
   display: none;
 }
 
-
+@media only screen and (max-width: 1024px) {
+  nav ul {
+    display: none;
+  }
 
   .mobile-nav {
     display: block;
@@ -159,14 +165,21 @@ nav ul {
   color: white;
 }
 
-
+@media only screen and (max-width: 1024px) {
+  .product {
+    width: 47%;
+  }
 
   .product.glasses {
     display: none;
   }
 }
 
-
+@media only screen and (max-width: 470px) {
+  .products,
+  .business-info {
+    flex-wrap: wrap;
+  }
 
   .product {
     width: 90%;
@@ -190,4 +203,11 @@ footer {
   margin-top: 4rem;
   background-color: black;
   color: white;
+}
+
+
+@media only screen and (max-width: 470px) {
+  footer {
+    text-align: center;
+  }
 }
