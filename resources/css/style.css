@@ -1,213 +1,204 @@
-/* "Tamming" Box Model With Reset */
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 /* Universal Styles */
 
 html {
   font-size: 18px;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
+  margin: 0 auto;
   font-family: "Helvetica", sans-serif;
   line-height: 1.4;
-}
+  }
 
-h1,
-h4 {
+  a {
+  color: white;
   font-weight: bold;
-}
+  }
 
-.container {
+  .common_content_settings {
   max-width: 960px;
   margin: 0 auto;
-}
+  }
 
-/* Company Header */
-
-.company {
+  /* header */
+  .header {
   background-color: black;
   color: white;
-}
+  }
 
-.company .container {
+  .header > .common_content_settings {
   display: flex;
   align-items: center;
   padding: .66rem 0 .66rem 0.5rem;
-}
+  }
 
-.company img {
+  .header img {
   height: 1.5rem;
   padding-right: 1rem;
+  }
+
+/* Banner section */
+.bannerPic {
+background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+height: 25rem;
 }
 
-/* Main Banner */
-
-.main-banner {
-  background: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 25rem;
+.announcement {
+position: relative;
+top: 9rem;
+width: 20rem;
+padding: 2rem 3rem;
+background-color: black;
+color: white;
 }
 
-.headline {
-  position: relative;
-  top: 9rem;
-  width: 20rem;
-  padding: 2rem 3rem;
-  background-color: black;
-  color: white;
-}
-
-.headline h1 {
-  margin: 0.25rem 0;
-  font-size: 2rem;
-  line-height: 1.2;
+.announcement h1 {
+font-size: 2rem;
+margin: 0.25rem 0;
+line-height: normal;
 }
 
 @media only screen and (max-width: 470px) {
-  .main-banner {
-    height: 15rem;
-  }
+.bannerPic {
+  height: 15rem;
+}
 
-  .headline {
-    width: 100%;
-    padding: 1rem 2rem;
-    top: 10rem;
-  }
+.announcement {
+  width: 100%;
+  padding: 1rem 2rem;
+  top: 10rem;
+}
 
-  .headline h4 {
-    font-size: .77rem;
-  }
+.announcement h4 {
+  font-size: .77rem;
+}
 
-  .headline h1 {
-    font-size: 1rem;
-  }
+.announcement h1 {
+  font-size: 1rem;
+ }
 }
 
 /* Navigation Bar */
 
 nav {
-  background-color: firebrick;
-  color: white;
+background-color: firebrick;
 }
 
 nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+list-style-type: none;
+padding: .75rem 0;
 }
 
-.mobile-nav {
+.mobile-list {
+display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+nav ul {
   display: none;
 }
 
-@media only screen and (max-width: 1024px) {
-  nav ul {
-    display: none;
-  }
-
-  .mobile-nav {
-    display: block;
-    text-align: center;
-  }
-}
-
-/* Products and Business Information Section */
-
-.products,
-.business-info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
-}
-
-.product {
-  width: 30%;
-}
-
-.product-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 9rem;
-  padding: 2rem 0;
-  border: 4px solid black;
-}
-
-.product-image img {
-  max-width: 8rem;
-}
-
-.description {
+.mobile-list {
   display: block;
-  padding: 0.5rem;
-  background-color: black;
   text-align: center;
-  color: white;
+ }
 }
 
-.info {
-  width: 35%;
+/* item section */
+.items, .operation {
+display: flex;
+justify-content: space-between;
+margin-top: 3rem;
 }
 
-.info .title {
-  display: block;
-  padding: 1rem 2rem;
-  background-color: black;
-  color: white;
+.item, .item-glasses, .item-watch {
+width: 30%;
 }
+
+.item-img {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 9rem;
+padding: 2rem 0;
+border: 4px solid black;
+}
+
+.item-img img{
+max-width: 8rem;
+}
+
+.itemtext {
+display: block;
+padding: 0.5rem;
+background-color: black;
+text-align: center;
+color: white;
+}
+
+/* operation section */
+.op-item {
+width: 35%;
+}
+
+.op-item .subheading {
+display: block;
+padding: 1rem 2rem;
+background-color: black;
+color: white;
+}
+
+.op-item > span {
+color: black;
+}
+/* end operation section */
 
 @media only screen and (max-width: 1024px) {
-  .product {
-    width: 47%;
-  }
-
-  .product.glasses {
-    display: none;
-  }
+.item-glasses{
+  display: none;
+}
+.item, .item-watch {
+  width: 47%;
+}
 }
 
 @media only screen and (max-width: 470px) {
-  .products,
-  .business-info {
-    flex-wrap: wrap;
-  }
-
-  .product {
-    width: 90%;
-    margin: auto;
-  }
-
-  .product.watch {
-    display: none;
-  }
-
-  .info {
-    width: 90%;
-    margin: 0.5rem auto;
-  }
+.items, .operation {
+  flex-wrap: wrap;
+}
+.item-watch {
+  display: none;
+}
+.item {
+  width: 90%;
+  margin: auto;
+}
+.op-item {
+  width: 90%;
+  margin: 0.5rem auto;
+ }
 }
 
-/* Footer */
-
+/* footer section */
 footer {
-  padding: 5rem 0;
-  margin-top: 4rem;
-  background-color: black;
-  color: white;
+padding: 2.5rem 0;
+margin-top: 4rem;
+background-color: black;
+color: white;
 }
 
-
 @media only screen and (max-width: 470px) {
-  footer {
-    text-align: center;
-  }
+footer {
+  text-align: center;
+ }
 }
